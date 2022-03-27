@@ -1,0 +1,104 @@
+$red: #ff0000
+$dred: #aa0000
+$gray: rgb(240,240,240)
+$percent: 20%
+@mixin color_invert($i)
+    filter: invert($i*$percent)
+@for $i from 1 through 5
+    .main_item:nth-child(5n+#{$i}) img  
+        @include color_invert($i)    
+*
+    box-sizing: border-box
+
+.container
+    max-width: 1000px
+    margin: 0 auto
+            
+header
+    margin: 20px 20px
+    border: thin outset black
+    background-color: $gray
+    padding: 0 0 20px 0
+
+.header_wrapper
+    display: grid
+    grid-template-columns: 50px 200px 200px 
+    grid-auto-rows: 50px
+    &_square
+        background-color: $red
+        display: flex
+        justify-content: center
+        align-items: center
+    &_logo
+        img
+            width: 40px
+            height: 40px
+    &_name
+        color: $red
+        font-size: 20px
+        margin: 22px 40px
+    &_button
+        margin: 10px 0 0 360px
+        width: 200px
+        height: 50px
+        color: White
+        background-color: $red
+        border: thick double $dred
+        border-radius: 10px
+        &:hover
+            background-color: $dred
+            border: thick double $red
+            cursor: pointer
+
+.main
+    &_header
+        display: inline-block
+        margin: 30px 0 0 0 
+    &_wrapper
+        display: flex
+        flex-wrap: wrap
+    &_item
+        width: 300px
+        height: 300px
+        margin: 100px 0 0 0
+        &_imgwrapper
+            position: relative
+        &_type
+            position: absolute
+            top: 10px
+            left: 10px
+            background-color: $red
+            border: thin double black
+            color: White
+        &_img
+            max-width:  200px
+            max-height: 200px
+        &_name
+            font-weight: 1000
+            margin-top: 20px
+            margin-right: 30px
+            text-align: center
+            padding-right: 70px
+        &_descr
+            text-align: center
+            margin-right: 30px
+            padding-right: 70px
+        
+.footer
+    padding-bottom: 30px
+    padding-right: 150px
+    padding-left: 150px
+    &_line
+        margin-top: 30px
+    &_wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+        &_icons
+            margin-top: 10px
+            display: flex
+            justify-content: space-between
+        &_name
+            text-align: center
+            margin-top: 20px
+            margin-left: 20px
