@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <style>
+    .round {
+      animation-name: rotation;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    @keyframes rotation {
+      0% {
+        transform:rotate(0deg);}
+      100% {
+        transform:rotate(360deg);
+      }
+    }
+  </style>
+
+  <title>в мире животных</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script defer src="dist/bundle.js"></script>
+</head>
+<body>
+<ul class="nav">
+  <li class="nav-item">
+    <img src="./photo/logo.jpg" class="imagE" alt="">
+  </li>
+  <li class="nav-item">
+    <a href="#" data-toggle="popover" title="Ничего" data-content="Тут есть ничего">гы</a>
+
+  </li>
+  <li class="nav-item">
+    <button type="button" class="btn btn-primary" id="liveToastBtn">Загрузить</button>
+    <div class="position-absolute top-0 end-0 p-3" style="z-index: 11">
+      <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header ">
+          <img src="./photo/fish.gif" class="round" width="15%" class="rounded me-2" alt="...">
+          <strong class="me-auto">Внимание</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
+          Спасибо за внимание
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<div class="container breakpoints">
+  <h2>Животный флекс</h2>
+  <div class="row">
+
+    <div class="col-xxl-4 cpl-lg col-sm col gy-3 secb" id ="c">
+      <div class="card card1" style="width: 18rem; margin-left: auto; margin-right: auto">
+        <img src="photo\djaba.gif" class="img-fluid" alt="">
+        <div class="card-body">
+          <h5 class="card-title">я</h5>
+          <p class="card-text">
+            лягушка танцует
+          </p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter1">
+            Информация
+          </button>
+          <div class="modal fade" id="exampleModalCenter1"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Карточка 1
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-danger" data-toggle="popover" title="Popover title" data-content="Тут больше инфы">Клик сюда</button>
+                  <button type="button" class="btn btn-default btn-next" data-toggle="modal" data-target="#exampleModalCenter2" data-dismiss="modal">Next</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xxl-4 cpl-lg col-sm col gy-3 secb" id ="c">
+      <div class="card card2" style="width: 18rem; margin-left: auto; margin-right: auto">
+        <img src="photo\duck.gif" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Утка</h5>
+          <p class="card-text">
+            утка шлепает
+          </p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">
+            Информация
+          </button>
+          <div class="modal fade" id="exampleModalCenter2"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle2" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle" >Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Карточка 2
+                </div>
+                <div class="modal-footer">
+
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-danger" data-toggle="popover" title="Popover title" data-content="Тут больше инфы">Клик сюда</button>
+                  <button type="button" class="btn btn-default btn-prev" data-toggle="modal" data-target="#exampleModalCenter1" data-dismiss="modal">Prev</button>
+                  <button type="button" class="btn btn-default btn-next" data-toggle="modal" data-target="#exampleModalCenter3" data-dismiss="modal">Next</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xxl-4 cpl-lg col-sm col gy-3 secb" id ="c">
+      <div class="card card3" style="width: 18rem; margin-left: auto; margin-right: auto">
+        <img src="photo\dog.gif" class="card-img-top" alt="" weight = 100%>
+        <div class="card-body">
+          <h5 class="card-title">собака</h5>
+          <p class="card-text">
+            Корова
+          </p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter3">
+            Информация
+          </button>
+          <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle3" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Информация</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Карточка 3
+                </div>
+                <div class="modal-footer">
+
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-danger" data-toggle="popover" title="Popover title" data-content="Тут больше инфы">Клик сюда</button>
+                  <button type="button" class="btn btn-default btn-prev" data-toggle="modal" data-target="#exampleModalCenter2" data-dismiss="modal">Prev</button>
+                  <button type="button" class="btn btn-default btn-next" data-toggle="modal" data-target="#exampleModalCenter4" data-dismiss="modal">Next</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xxl-4 cpl-lg col-sm col gx-3 secb" id ="c">
+      <div class="card card4" style="width: 18rem; margin-left: auto; margin-right: auto">
+        <img src="photo\fish.gif" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Риба</h5>
+          <p class="card-text">
+            блин хочу так-же
+          </p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter4">
+            Информация
+          </button>
+          <div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle4" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Карточка 4
+
+                </div>
+                <div class="modal-footer">
+
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-danger" data-toggle="popover" title="Popover title" data-content="Тут больше инфы">Клик сюда</button>
+                  <button type="button" class="btn btn-default btn-prev" data-toggle="modal" data-target="#exampleModalCenter3" data-dismiss="modal">Prev</button>
+                  <button type="button" class="btn btn-default btn-next" data-toggle="modal" data-target="#exampleModalCenter5" data-dismiss="modal">Next</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xxl-4 cpl-lg col-sm col gy-3 secb" id ="c">
+      <div class="card card5" style="width: 18rem; margin-left: auto; margin-right: auto">
+        <img src="photo\cow.gif" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">корова</h5>
+          <p class="card-text">
+            собака
+          </p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter5">
+            Информация
+          </button>
+          <div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle5" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Карточка 5
+
+                </div>
+                <div class="modal-footer">
+
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-danger" data-toggle="popover" title="Popover title" data-content="Тут больше инфы">Клик сюда</button>
+                  <button type="button" class="btn btn-default btn-prev" data-toggle="modal" data-target="#exampleModalCenter4" data-dismiss="modal">Prev</button>
+                  <button type="button" class="btn btn-default btn-next" data-toggle="modal" data-target="#exampleModalCenter6" data-dismiss="modal">Next</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xxl-4 cpl-lg col-sm col gy-3 secb" id ="c">
+      <div class="card card6" style="width: 18rem; margin-left: auto; margin-right: auto">
+        <img src="photo\cat.gif" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">кот</h5>
+          <p class="card-text">
+            не кот
+          </p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter6">
+            Информация
+          </button>
+          <div class="modal fade" id="exampleModalCenter6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Карточка 6
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-danger" data-toggle="popover" title="Popover title" data-content="Тут больше инфы">Клик сюда</button>
+                  <button type="button" class="btn btn-default btn-prev" data-toggle="modal" data-target="#exampleModalCenter5" data-dismiss="modal">Prev</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="./dist/bundle.js"></script>
+<script>
+  $(document).ready(function(){
+    $("#liveToastBtn").click(function(){
+      $('#liveToast').toast({delay:2000});
+      $("#liveToast").toast("show");
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function(){
+    $("#exampleModalCenter1").keydown(function(e){
+      e.preventDefault();
+
+      switch (e.which){
+        case 39: //right arrow key
+          $("#exampleModalCenter1").modal('hide');
+          $("#exampleModalCenter1").closest("div[id^='c']").next().find("#exampleModalCenter2").modal('show');
+          break;
+      }
+    });
+
+    $("#exampleModalCenter2").keydown(function(e){
+      e.preventDefault();
+
+      switch (e.which){
+        case 37: //left arrow key
+          $("#exampleModalCenter2").modal('hide');
+          $("#exampleModalCenter2").closest("div[id^='c']").prev().find("#exampleModalCenter1").modal('show');
+          break;
+        case 39: //right arrow key
+          $("#exampleModalCenter2").modal('hide');
+          $("#exampleModalCenter2").closest("div[id^='c']").next().find("#exampleModalCenter3").modal('show');
+          break;
+      }
+    });
+
+    $("#exampleModalCenter3").keydown(function(e){
+      e.preventDefault();
+      switch (e.which){
+        case 37: //left arrow key
+          $("#exampleModalCenter3").modal('hide');
+          $("#exampleModalCenter3").closest("div[id^='c']").prev().find("#exampleModalCenter2").modal('show');
+          break;
+        case 39: //right arrow key
+          $("#exampleModalCenter3").modal('hide');
+          $("#exampleModalCenter3").closest("div[id^='c']").next().find("#exampleModalCenter4").modal('show');
+          break;
+      }
+    });
+
+    $("#exampleModalCenter4").keydown(function(e){
+      e.preventDefault();
+      switch (e.which){
+        case 37: //left arrow key
+          $("#exampleModalCenter4").modal('hide');
+          $("#exampleModalCenter4").closest("div[id^='c']").prev().find("#exampleModalCenter3").modal('show');
+          break;
+        case 39: //right arrow key
+          $("#exampleModalCenter4").modal('hide');
+          $("#exampleModalCenter4").closest("div[id^='c']").next().find("#exampleModalCenter5").modal('show');
+          break;
+      }
+    });
+
+    $("#exampleModalCenter5").keydown(function(e){
+      e.preventDefault();
+
+      switch (e.which){
+        case 37: //left arrow key
+          $("#exampleModalCenter5").modal('hide');
+          $("#exampleModalCenter5").closest("div[id^='c']").prev().find("#exampleModalCenter4").modal('show');
+          break;
+        case 39: //right arrow key
+          $("#exampleModalCenter5").modal('hide');
+          $("#exampleModalCenter5").closest("div[id^='c']").next().find("#exampleModalCenter6").modal('show');
+          break;
+      }
+    });
+
+    $("#exampleModalCenter6").keydown(function(e){
+      e.preventDefault();
+
+      switch (e.which){
+        case 37: //left arrow key
+          $("#exampleModalCenter6").modal('hide');
+          $("#exampleModalCenter6").closest("div[id^='c']").prev().find("#exampleModalCenter5").modal('show');
+          break;
+      }
+    });
+  });
+</script>
+</body>
+</html>
