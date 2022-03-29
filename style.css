@@ -1,7 +1,5 @@
 body {
-    background: #0C0C0C;
     -webkit-animation: color-change-4x 6s linear infinite alternate both;
-            animation: color-change-4x 6s linear infinite alternate both;
 }
 
 @keyframes color-change-4x {
