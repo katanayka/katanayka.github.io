@@ -1,8 +1,8 @@
 body {
-    -webkit-animation: color-change-4x 3s linear infinite alternate both;
+    -webkit-animation: raduga 0.5s linear infinite alternate both;
 }
 
-@keyframes color-change-4x {
+@keyframes raduga {
     0% {
         background: #ff0000ff;
     }
