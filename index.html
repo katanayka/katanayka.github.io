@@ -3,9 +3,15 @@
     <head>
         <title>приветик</title>
         <link href="img/favicon.ico" rel="icon" type="image/x-icon">
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">        
     </head>
     <body>
-        <div class="box"><b></b><p></p><i></i></div>
+        <div class="box">   
+            <audio id="player" src="pizdec.mp3"></audio>
+    <div> 
+        <button onclick="document.getElementById('player').play()">Play</button> 
+    </div>
+        <b>
+        <button onclick="document.getElementById('player').pause()">Pause</button></b><p></p><i></i></div>
     </body>
 </html>
