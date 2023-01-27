@@ -1,0 +1,87 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="hljs">
+<pre>
+<code class="hljs">
+import math
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+import scipy
+
+# 1 - загрузка ирисок
+df = pd.read_csv("iris.csv", delimiter=",")
+print(df)
+
+#прикол чтобы категориальные данные превратить в столбцы (в данном случае вид цветочков)
+encoded = pd.get_dummies(df.variety)
+merged_data = pd.concat([df, encoded], axis='columns')
+merged_data = merged_data.drop(['variety'], axis=1)
+
+# 2 - тепловая карта
+sns.heatmap(merged_data.corr(), square=True, annot=True, linewidths=2, linecolor="#000000")
+#plt.show()
+
+# 3 - проверить нормальность (тут для sepal.width)
+stat, p = scipy.stats.shapiro(df['sepal.width'])
+print(p)
+
+if p > 0.05:
+    print('Нормально')
+else:
+    print('Ненормально')
+
+# 4 - чет там бинарный классификатор
+
+df_new = pd.concat([df.loc[(df['variety'] == "Setosa")], df.loc[(df['variety'] == "Virginica")]])
+#print(df_new.to_string()) привели датафрейм к двум видам цветочков
+
+#print(df_new["variety"].head())
+#print(df_new["variety"].value_counts())
+
+data = df_new.drop(columns='variety')
+print(data)
+X = data
+y = df_new["variety"]
+
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
+
+from sklearn.preprocessing import StandardScaler
+
+ss_train = StandardScaler()
+X_train = ss_train.fit_transform(X_train)
+
+ss_test = StandardScaler()
+X_test = ss_test.fit_transform(X_test)
+
+from sklearn.linear_model import LogisticRegression
+
+lr = LogisticRegression()
+
+
+
+predictions = model.predict(X_test)
+
+from sklearn.metrics import confusion_matrix
+
+cm = confusion_matrix(y_test, predictions)
+
+TN, FP, FN, TP = confusion_matrix(y_test, predictions).ravel()
+
+print('True Positive(TP)  = ', TP)
+print('False Positive(FP) = ', FP)
+print('True Negative(TN)  = ', TN)
+print('False Negative(FN) = ', FN)
+
+accuracy = (TP + TN) / (TP + FP + TN + FN)
+
+print('Accuracy of the binary classifier = {:0.3f}'.format(accuracy))
+
+</code>
+</pre>
+</body>
+</html>
